@@ -6,11 +6,20 @@
 /*   By: icheri <icheri@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:40:48 by icheri            #+#    #+#             */
-/*   Updated: 2022/04/09 23:59:14 by icheri           ###   ########.fr       */
+/*   Updated: 2022/04/10 19:18:11 by icheri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+void	print(t_slg *slg)
+{
+	char	*str;
+
+	str = ft_itoa(slg->moves);
+	ft_putchar(str);
+	free(str);
+}
 
 static void	move_w(t_slg *slg)
 {
@@ -27,7 +36,7 @@ static void	move_w(t_slg *slg)
 		slg->map[y][x] = '0';
 		slg->player_y--;
 		slg->moves++;
-		ft_putchar(ft_itoa(slg->moves));
+		print(slg);
 	}
 	else if ((slg->map [y - 1][x] == 'E') && (!slg->count_collect))
 	{
@@ -51,7 +60,7 @@ static void	move_a(t_slg *slg)
 		slg->map[y][x] = '0';
 		slg->player_x--;
 		slg->moves++;
-		ft_putchar(ft_itoa(slg->moves));
+		print(slg);
 	}
 	else if ((slg->map [y][x - 1] == 'E') && (!slg->count_collect))
 	{
@@ -75,7 +84,7 @@ static void	move_s(t_slg *slg)
 		slg->map[y][x] = '0';
 		slg->player_y++;
 		slg->moves++;
-		ft_putchar(ft_itoa(slg->moves));
+		print(slg);
 	}
 	else if ((slg->map [y + 1][x] == 'E') && (!slg->count_collect))
 	{
@@ -99,7 +108,7 @@ static void	move_d(t_slg *slg)
 		slg->map[y][x] = '0';
 		slg->player_x++;
 		slg->moves++;
-		ft_putchar(ft_itoa(slg->moves));
+		print(slg);
 	}
 	else if ((slg->map [y][x + 1] == 'E') && (!slg->count_collect))
 	{

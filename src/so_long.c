@@ -6,7 +6,7 @@
 /*   By: icheri <icheri@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 21:06:31 by icheri            #+#    #+#             */
-/*   Updated: 2022/04/10 15:45:54 by icheri           ###   ########.fr       */
+/*   Updated: 2022/04/16 13:30:53 by icheri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ int	main(int argc, char **argv)
 	mlx_hook(slg.mlx_win, 17, 0, ft_exit, 0);
 	mlx_hook(slg.mlx_win, 2, 0, click_handling, &slg);
 	mlx_loop(slg.mlx);
+	while(1);
 	return (0);
 }
